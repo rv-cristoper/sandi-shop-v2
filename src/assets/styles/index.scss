@@ -1,0 +1,37 @@
+@import "cdn.scss";
+@import "constants.scss";
+@import "normalize.scss";
+
+* {
+   margin: 0;
+   padding: 0;
+   font-size: 2rem;
+   font-family: "Lato";
+   font-weight: 300;
+   color: $tx-dark-color;
+}
+html,
+body {
+   width: 100%;
+   background-color: $bg-light-color;
+   line-height: 1.5;
+   font-size: 62.5%;
+}
+header {
+   position: sticky !important;
+   top: 0;
+   z-index: 11;
+}
+h1,
+h2,
+h3 {
+   font-family: "Poppins" !important;
+   font-weight: 700 !important;
+   margin: 0 !important;
+}
+a {
+   text-decoration: none !important;
+}
+li {
+   list-style-type: none;
+}
