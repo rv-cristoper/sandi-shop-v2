@@ -1,6 +1,6 @@
-@import "cdn.scss";
-@import "constants.scss";
-@import "normalize.scss";
+@import "./global/cdn";
+@import "./global/constants";
+@import "./global/normalize";
 
 * {
    margin: 0;
@@ -9,6 +9,7 @@
    font-family: "Lato";
    font-weight: 300;
    color: $tx-dark-color;
+   box-sizing: border-box;
 }
 html,
 body {
