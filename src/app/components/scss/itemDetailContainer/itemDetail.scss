@@ -1,0 +1,58 @@
+.product {
+   display: flex;
+   width: 100%;
+   max-width: 950px;
+   align-items: center;
+   margin: auto;
+   gap: 4rem 5rem;
+   > img {
+      width: 100%;
+      max-width: 500px;
+   }
+   .details {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      width: 100%;
+      .brand {
+         font-size: 1.4rem;
+         font-weight: 700;
+         text-decoration-line: underline;
+         font-family: "Poppins";
+      }
+      h1 {
+         font-size: 2.5rem;
+      }
+      .code {
+         color: #878c8f;
+         font-weight: 700;
+         font-size: 1.4rem;
+      }
+      .status {
+         padding-top: 3rem;
+         span {
+            font-family: "Poppins";
+            font-weight: 700;
+            color: red;
+            font-size: 1.4rem;
+         }
+         .success {
+            color: #ee6983;
+         }
+      }
+      .type_price {
+         display: flex;
+         justify-content: space-between;
+         .old_price {
+            font-size: 1.4rem;
+            color: #878c8f;
+            font-weight: 700;
+         }
+         .new_price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: "Poppins";
+         }
+      }
+   }
+}

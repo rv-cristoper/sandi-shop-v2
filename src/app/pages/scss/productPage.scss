@@ -1,0 +1,8 @@
+@import "../../../assets/styles/global/constants";
+@import "../../../assets/styles/components/extend";
+.main_product {
+   background-color: $bg-light-color;
+   .page_space {
+      @extend %initialContainerStyle;
+   }
+}

@@ -56,6 +56,10 @@
             }
          }
       }
+      .main_loader_list {
+         width: 100vw;
+         max-width: $max-width
+      }
       .product_space {
          grid-area: Product;
          display: grid;
