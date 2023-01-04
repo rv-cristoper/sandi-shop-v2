@@ -1,0 +1,254 @@
+// @import "../components/card";
+// @import "../components/loader";
+@import "../../../assets/styles/global/constants";
+@import "../../../assets/styles/components/maps";
+@import "../../../assets/styles/components/extend";
+
+.main_container {
+   background-color: $bg-light-color;
+   padding: $padding;
+
+   .page_space {
+      @extend %initialContainerStyle;
+      display: grid;
+      grid-template-areas: map-get($mapTemplateArea, main);
+      grid-template-columns: 520px auto;
+
+      .information {
+         grid-area: information;
+         padding-top: 2rem;
+
+         p {
+            font-family: "Poppins";
+            font-size: 1.8rem;
+         }
+
+         h1 {
+            font-size: 7rem;
+            margin: 0;
+         }
+
+         .description {
+            font-size: 1.5rem;
+            font-family: "Poppins";
+            padding: 3rem 0 4rem;
+            width: 100%;
+            max-width: 338px;
+         }
+
+         .btn_to_nav {
+            background-color: $bg-dark-color;
+            border: none;
+            color: $tx-light-color;
+            padding: 1.5rem;
+            border-radius: 3rem;
+            font-size: 1.5rem;
+            font-family: "Poppins";
+            display: flex;
+            column-gap: 1rem;
+            align-items: center;
+            cursor: pointer;
+            width: max-content;
+
+            i {
+               color: $tx-light-color;
+               background-color: $bg-primary-color;
+               border-radius: 20px;
+               width: 13px;
+               padding: 0.5rem;
+               font-size: 1.3rem;
+               box-sizing: content-box;
+               display: flex;
+               justify-content: center;
+            }
+         }
+      }
+
+      .image_information {
+         grid-area: imageInformation;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+
+      .sectionA {
+         grid-area: sectionA;
+         text-align: center;
+
+         .content_items {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+         }
+      }
+
+      .sectionB {
+         grid-area: sectionB;
+         overflow: hidden;
+
+         .container_carousel {
+            position: relative;
+            margin: 0 5rem;
+
+            .swiper-button-next {
+               right: -50px;
+            }
+
+            .swiper-button-prev {
+               left: -50px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+               color: #c5c5c5;
+               font-weight: 600;
+            }
+         }
+      }
+
+      .sectionC {
+         grid-area: sectionC;
+         display: flex;
+         flex-direction: row-reverse;
+         column-gap: 4rem;
+         margin-top: 4rem;
+      }
+
+      .sectionD {
+         grid-area: sectionD;
+         display: flex;
+         column-gap: 4rem;
+      }
+
+      .sectionA,
+      .sectionB {
+         h2 {
+            font-size: 3.5rem;
+            margin: 4rem 0 !important;
+         }
+      }
+
+      .sectionC,
+      .sectionD {
+         h2 {
+            display: flex;
+            align-items: center;
+            background-color: $bg-dark-color;
+            color: $tx-light-color;
+            padding: 2rem;
+            margin: 0 !important;
+            width: 250px;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: "Poppins" !important;
+            font-size: 3.5rem;
+         }
+
+         img {
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+}
+
+.swiper {
+   height: auto;
+   z-index: 0 !important;
+
+   .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .main_container {
+      .page_space {
+         grid-template-areas: map-get($mapTemplateAreaResponsive, main);
+         grid-template-columns: auto;
+
+         .information {
+            padding-top: 0;
+         }
+
+         .image_information {
+            img {
+               height: 100%;
+               max-height: 340px;
+               object-position: top;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .main_container {
+      .page_space {
+         .information {
+            h1 {
+               font-size: 4.5rem;
+            }
+         }
+
+         .sectionA,
+         .sectionB {
+            h2 {
+               font-size: 2.5rem;
+            }
+         }
+
+         .sectionC,
+         .sectionD {
+            h2 {
+               font-size: 2rem;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 425px) {
+   .main_container {
+      padding: $paddingMobile;
+
+      .page_space {
+         row-gap: 3rem;
+
+         .information {
+            h1 {
+               font-size: 3.5rem;
+            }
+
+            .btn_to_nav {
+               padding: 0.8rem;
+            }
+         }
+
+         .sectionA,
+         .sectionB {
+            h2 {
+               margin: 2rem 0 !important;
+            }
+         }
+
+         .sectionC,
+         .sectionD {
+            flex-direction: column;
+            margin-top: 0;
+
+            h2 {
+               width: 100%;
+               padding: 1rem;
+            }
+         }
+      }
+   }
+}

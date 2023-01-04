@@ -1,0 +1,98 @@
+@import "../../../../../assets/styles/global/constants";
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $padding !important;
+    background-color: $bg-primary-color;
+    column-gap: 2rem;
+
+    p {
+        font-size: 4rem;
+        cursor: pointer;
+        font-family: "Poppins" !important;
+        color: $tx-light-color;
+        text-transform: capitalize;
+        letter-spacing: 5px;
+    }
+
+    .header_nav {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+
+        .navigation {
+            .main_list {
+                display: flex;
+                gap: 0 2rem;
+
+                li {
+                    a {
+                        padding: 1rem;
+                        font-weight: 600;
+                        font-size: 1.8rem;
+                        color: #850e35;
+
+                        &.active {
+                            color: $tx-light-color;
+                        }
+
+                        &:focus,
+                        :hover {
+                            color: $tx-light-color !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_cart {
+            position: relative;
+
+            >span {
+                display: flex;
+                color: #fff;
+                background: #000;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: -4px;
+                top: -4px;
+            }
+
+            >i {
+                color: $tx-light-color;
+                cursor: pointer;
+                padding: 1rem;
+            }
+
+            .close {
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header_container p {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header_container {
+        padding: $paddingMobile !important;
+
+        p {
+            font-size: 2rem;
+        }
+    }
+}

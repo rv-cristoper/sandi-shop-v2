@@ -1,0 +1,44 @@
+@import "../../../../assets/styles/global/constants";
+@import "../../../../assets/styles/components/maps";
+
+.card_2 {
+    width: 191px;
+    height: 260px;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    p {
+        position: absolute;
+        inset: 0;
+        top: initial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        height: 35px;
+        color: $tx-dark-color;
+        font-weight: 600;
+        margin: 0;
+        background-color: #b0bbc9;
+    }
+
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) p {
+            background-color: map-get($mapAnyCategory, $i);
+        }
+    }
+
+    &:hover p {
+        height: 100%;
+        text-shadow: 0 0 10px $tx-dark-color;
+        color: $tx-light-color;
+        letter-spacing: 1.5px;
+        font-size: 2.8rem;
+    }
+}

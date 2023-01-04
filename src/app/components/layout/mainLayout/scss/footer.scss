@@ -1,0 +1,137 @@
+@import "../../../../../assets/styles/global/constants";
+.footer_container {
+    padding: $padding;
+    background-color: $bg-dark-color;
+
+    h3,
+    i,
+    input,
+    button {
+        color: $tx-light-color;
+        font-size: 1.4rem;
+    }
+
+    p,
+    a {
+        color: $tx-gray-color;
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .footer_information {
+        width: 100%;
+        max-width: $max-width;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+
+        .first_section {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 4rem 0;
+
+            .column_item {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.2rem;
+
+                h3 {
+                    font-size: 1.6rem;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 0.5rem;
+                    padding: 0;
+
+                    li {
+                        display: flex;
+                    }
+                }
+
+                .contac_number {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 1rem;
+                    font-size: 2rem;
+
+                    i {
+                        color: $tx-gray-color;
+                        font-size: 2rem;
+                    }
+
+                    &:hover {
+                        text-decoration: none !important;
+
+                        i {
+                            color: $tx-light-color;
+                        }
+                    }
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    padding-top: 1rem;
+
+                    input {
+                        padding: 0.7rem 1rem;
+                        color: $tx-dark-color;
+                    }
+
+                    button {
+                        padding: 0.7rem 1rem;
+                        border-radius: 1.2rem;
+                        background-color: inherit;
+                        border: 1px solid;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+
+                        &:hover {
+                            color: $tx-dark-color;
+                            background-color: $bg-light-color;
+                        }
+                    }
+                }
+
+                a:hover {
+                    text-decoration: underline !important;
+                    color: $tx-light-color;
+                }
+            }
+        }
+
+        .last_section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .content_icons {
+                display: flex;
+                column-gap: 1rem;
+
+                i {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .footer_container {
+        padding: $paddingMobile;
+    }
+}
