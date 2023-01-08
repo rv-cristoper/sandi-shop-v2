@@ -1,43 +1,53 @@
-.card_1 {
-   padding: 2rem;
-   box-shadow: inset 0px 0px 13px -2px rgba(0, 0, 0, 0.27);
-   border-radius: 20px;
-   width: 100%;
-   text-align: center;
-   h3 {
-      font-size: 1.4rem;
-      text-align: left;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-   }
-   img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      padding: 2rem 0;
-      margin: auto;
-      box-sizing: content-box;
-   }
-   .product_code {
-      font-size: 1.2rem;
-      text-align: left;
-   }
-   .prices {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .new_price {
-         display: inline-block;
-         margin: 2rem 0px;
-         font-weight: 600;
-         font-family: "Poppins";
-         font-size: 2.5rem;
+.main_card {
+   position: relative;
+   .card_1 {
+      padding: 2rem;
+      box-shadow: inset 0px 0px 13px -2px rgba(0, 0, 0, 0.27);
+      border-radius: 20px;
+      width: 100%;
+      text-align: center;
+      padding-bottom: calc(2rem + 36.5px);
+      h3 {
+         font-size: 1.4rem;
+         text-align: left;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;
       }
-      .old_price {
-         font-size: 1.5rem;
-         text-decoration: line-through;
+      img {
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         object-fit: cover;
+         padding: 2rem 0;
+         margin: auto;
+         box-sizing: content-box;
       }
+      .product_code {
+         font-size: 1.2rem;
+         text-align: left;
+      }
+      .prices {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         .new_price {
+            display: inline-block;
+            margin: 2rem 0px;
+            font-weight: 600;
+            font-family: "Poppins";
+            font-size: 2.5rem;
+         }
+         .old_price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+         }
+      }
+   }
+   button {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      width: calc(100% - 4rem);
    }
 }

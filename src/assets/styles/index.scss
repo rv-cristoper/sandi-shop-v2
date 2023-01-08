@@ -18,6 +18,11 @@ body {
    line-height: 1.5;
    font-size: 62.5%;
 }
+body >div {
+   display: grid;
+   grid-template-rows: max-content auto max-content;
+   height: 100vh;
+}
 header {
    position: sticky !important;
    top: 0;

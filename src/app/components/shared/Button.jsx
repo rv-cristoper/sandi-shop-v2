@@ -8,7 +8,7 @@ const Button = (props) => {
       disabled = false
    } = props;
    return (
-      <button className='btn btn-dark' onClick={onClick} disabled={disabled}>
+      <button className='btn-dark' onClick={onClick} disabled={disabled}>
          {text}
       </button>
    )

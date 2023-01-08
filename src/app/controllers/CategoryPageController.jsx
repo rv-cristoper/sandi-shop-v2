@@ -1,4 +1,3 @@
-import formatPrice from "../../assets/functions/formatPrice";
 import { getCategoryInfo } from "../services/CategoryService";
 import { getProductList } from "../services/ProductService";
 
@@ -25,17 +24,10 @@ class CategoryPageController {
       try {
          setLoadingProducts(true)
          const response = await getProductList(categoryId)
-         const newList = response.data.map(element => {
-            return {
-               ...element,
-               "newPrice": formatPrice(element.newPrice),
-               "oldPrice": formatPrice(element.oldPrice)
-            }
-         })
-         setProductList(newList)
-         return true;
+         setProductList(response.data)
+         return response.status;
       } catch (err) {
-         return false;
+         return err.status;
       }
       finally {
          setLoadingProducts(false)

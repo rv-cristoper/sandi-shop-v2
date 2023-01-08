@@ -15,6 +15,7 @@
         color: $tx-light-color;
         text-transform: capitalize;
         letter-spacing: 5px;
+        margin-bottom: 0;
     }
 
     .header_nav {
@@ -26,7 +27,7 @@
             .main_list {
                 display: flex;
                 gap: 0 2rem;
-
+                margin-bottom: 0;
                 li {
                     a {
                         padding: 1rem;

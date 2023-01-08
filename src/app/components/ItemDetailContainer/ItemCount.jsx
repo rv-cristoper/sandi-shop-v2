@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from '../shared/Button'
 import '../scss/itemDetailContainer/itemCount.scss'
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, onClick }) => {
    const [counter, setCounter] = useState(1);
 
    const status = stock < 1;
@@ -29,7 +29,7 @@ const ItemCount = ({ stock }) => {
             {counter}
             <i className={`fa-solid fa-plus increment ${iconRight}`} onClick={increase} />
          </div>
-         <Button text='Añadir al carrito' disabled={status} />
+         <Button text='Añadir al carrito' disabled={status} onClick={() => onClick(counter)} />
       </div>
    )
 }

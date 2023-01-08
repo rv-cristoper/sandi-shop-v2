@@ -21,6 +21,9 @@
          display: flex;
          justify-content: center;
          align-items: center;
+         &.accessories::before {
+            background: rgba(0, 0, 0, 0.1);
+         }
          &::before {
             content: "";
             background: rgba(0, 0, 0, 0.33);
@@ -58,13 +61,17 @@
       }
       .main_loader_list {
          width: 100vw;
-         max-width: $max-width
+         max-width: $max-width;
       }
       .product_space {
          grid-area: Product;
          display: grid;
          gap: 2rem;
          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+         .no_products {
+            text-align: center;
+            padding: 10rem 0;
+         }
          .container-loader-product {
             display: flex;
             flex-direction: column;
