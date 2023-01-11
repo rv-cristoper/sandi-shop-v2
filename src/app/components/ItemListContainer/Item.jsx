@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import formatPrice from '../../../assets/functions/formatPrice';
+import { CartContext } from '../../../context/CartContext';
 import '../scss/itemListContainer/item.scss'
 import Button from '../shared/Button';
 
 const Item = ({ details }) => {
+
+   const { addItem } = useContext(CartContext);
 
    const { id, image, name, newPrice, oldPrice } = details;
 
    const handleUrl = (name) => name.replaceAll(' ', '-').toLowerCase();
 
    const addToCard = () => {
+      addItem(details, 1)
    }
 
    return (

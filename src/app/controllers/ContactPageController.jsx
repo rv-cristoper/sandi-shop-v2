@@ -1,4 +1,5 @@
 import { saveContact, saveSubscription } from "../services/ContactService";
+import Swal from 'sweetalert2'
 
 class ContactPageController {
 
@@ -11,6 +12,11 @@ class ContactPageController {
             setLoading(true)
             const response = await saveSubscription(email);
             setEmail('')
+            Swal.fire({
+                icon: 'success',
+                title: '<h1>Gracias por suscribirte 🤩!</h1> </br></br> Cada fin de semana ofrecemos descuentos en miles de productos.',
+                width: '400px'
+            })
             return response.status;
         } catch (err) {
             return err.status;
@@ -33,6 +39,11 @@ class ContactPageController {
                 phone: '',
                 message: ''
             })
+            Swal.fire({
+                icon: 'success',
+                title: '<h1>Hemos registrado sus datos 🤩!</h1> </br></br> En breve nos pondremos en contacto con usted.',
+                width: '400px'
+             })
             return response.status;
         } catch (err) {
             return err.status;

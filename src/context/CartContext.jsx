@@ -1,5 +1,6 @@
 import isEmpty from 'is-empty';
 import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
 
 export const CartContext = React.createContext();
 
@@ -16,6 +17,24 @@ const CartProvider = ({ children }) => {
    }
 
    const addItem = (item, quantity) => {
+      if (item.stock === 0) return Swal.fire({
+         icon: 'warning',
+         title: 'Este producto no cuenta con stock disponible.',
+         width: '400px',
+         showConfirmButton: false,
+         timer: 2000
+      })
+
+      const exist = isInCart(item.id);
+      if (exist) {
+         return Swal.fire({
+            icon: 'warning',
+            title: 'El producto ya fue añadido al carrito.',
+            width: '400px',
+            showConfirmButton: false,
+            timer: 2000
+         })
+      }
       const newProducts = [
          ...products,
          {
@@ -25,6 +44,13 @@ const CartProvider = ({ children }) => {
       ]
       setProducts(newProducts)
       localStorage.setItem('products', JSON.stringify(newProducts))
+      Swal.fire({
+         icon: 'success',
+         title: 'Producto añadido al carrito.',
+         width: '400px',
+         showConfirmButton: false,
+         timer: 2000
+      })
    }
 
    const removeItem = (itemId) => {
@@ -34,6 +60,17 @@ const CartProvider = ({ children }) => {
 
    const clear = () => {
       setProducts([])
+      localStorage.removeItem('products')
+   }
+
+   const totalItems = () => {
+      if (isEmpty(products)) return 0;
+      return products.reduce((previousValue, currentValue) => previousValue + currentValue.quantity, 0);
+   }
+
+   const totalPrice = () => {
+      if (isEmpty(products)) return 0;
+      return products.reduce((previousValue, currentValue) => previousValue + (currentValue.quantity * currentValue.newPrice), 0);
    }
 
    const value = {
@@ -41,7 +78,9 @@ const CartProvider = ({ children }) => {
       isInCart,
       addItem,
       removeItem,
-      clear
+      clear,
+      totalItems,
+      totalPrice
    };
 
    useEffect(() => {

@@ -1,0 +1,51 @@
+@import "../../../assets/styles/global/constants";
+@import "../../../assets/styles/components/extend";
+
+.cart_container {
+    background-color: $bg-light-color;
+    padding: $padding;
+    .cart_space {
+        @extend %initialContainerStyle;
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 2.5rem));
+    }
+    .message {
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 1.4rem;
+        &.success {
+            color: rgb(41, 162, 47);
+        }
+        &.error {
+            color: red;
+        }
+    }
+    form {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        margin-top: 4rem;
+        text-align: left;
+
+        label {
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            box-sizing: border-box;
+            font-size: 1.8rem;
+            resize: none;
+        }
+
+        button {
+            padding: 1rem;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.8rem;
+        }
+    }
+}
